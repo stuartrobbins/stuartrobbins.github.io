@@ -14,14 +14,14 @@
     <script>
       function calculateTotal()
           {
-           
-            
+                      
             var amt = $("#amount").val();
             var term = $("#term").val();
             var interest = ($("#interest").val() / 100);
             
             var month_pay = (amt * (interest / 12) / (1 - (1/(1+(interest / 12)) ** term)));
-            $("#month_pay").val(month_pay);
+
+            $("#month_pay").text(month_pay);
             
             let total = (month_pay * term - amt);
 
