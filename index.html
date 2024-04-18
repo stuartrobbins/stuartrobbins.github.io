@@ -12,6 +12,18 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
+      function showInfo() {
+            var selectedValue = document.getElementById("dropdown").value;
+            var infoDiv = document.getElementById(selectedValue);
+            var allInfoDivs = document.querySelectorAll(".info");
+
+            // Hide all info divs
+            allInfoDivs.forEach(function(div) {
+                div.style.display = "none";
+            });
+
+            // Show selected info div
+            infoDiv.style.display = "block";
       function calculateTotal()
           {
                       
@@ -167,8 +179,8 @@
                     </div>
                     
                   </div>
-                  
-                <h2>Is a loan right for you?</h2>
+
+                <h1>Is a loan right for you?</h1>
                 <ul>
                   <li>Do you qualify for Federal Loans?</li>
                   <li>Do you expect to repay the loan with 10% of your monthly income?</li>
@@ -180,8 +192,8 @@
 						<!-- Three -->
 							<section id="three">
 								<div class="container">
-									<h3>A Few Accomplishments</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
+									<h3>The Value of College</h3>
+									<p></p>
 									<div class="features">
 										<article>
 											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
@@ -211,22 +223,27 @@
 						<!-- Four -->
 							<section id="four">
 								<div class="container">
-									<h3>Contact Me</h3>
+									<h3>Alternatives</h3>
 									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
-									<form method="post" action="#">
-										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-											<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-											<div class="col-12"><input type="text" name="subject" id="subject" placeholder="Subject" /></div>
-											<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
-											<div class="col-12">
-												<ul class="actions">
-													<li><input type="submit" class="primary" value="Send Message" /></li>
-													<li><input type="reset" value="Reset Form" /></li>
-												</ul>
-											</div>
-										</div>
-									</form>
+									<h2>Example of a Dropdown Menu with Information</h2>
+
+                    <select id="dropdown" onchange="showInfo()">
+                        <option value="option1">Option 1</option>
+                        <option value="option2">Option 2</option>
+                        <option value="option3">Option 3</option>
+                    </select>
+
+                    <div id="option1" class="info">
+                        <p>Information about Option 1 goes here.</p>
+                    </div>
+
+                    <div id="option2" class="info">
+                        <p>Information about Option 2 goes here.</p>
+                    </div>
+
+                    <div id="option3" class="info">
+                        <p>Information about Option 3 goes here.</p>
+                    </div>
 								</div>
 							</section>
 
