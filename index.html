@@ -15,16 +15,15 @@
       function calculateTotal()
           {
            
-            let loanval={}
             
-            loanval.amt = $("#amount").val();
-            loanval.term = $("#term").val();
-            loanval.interest = ($("#interest").val() / 100);
-
-            loanval.month_pay = (loanval.amt * (loanval.interest / 12)/ (1 - (1/(1+(loanval.interest / 12)) ** loanval.term)));
-            $("#month_pay").val() = loanval.month_pay;
+            var amt = $("#amount").val();
+            var term = $("#term").val();
+            var interest = ($("#interest").val() / 100);
             
-            let total = (loanval.month_pay * loanval.term - loanval.amt);
+            var month_pay = (amt * (interest / 12) / (1 - (1/(1+(interest / 12)) ** term)));
+            $("#month_pay").val(month_pay);
+            
+            let total = (month_pay * term - amt);
 
           
             $("#total_value").text(total);
