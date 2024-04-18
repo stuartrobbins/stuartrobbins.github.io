@@ -21,12 +21,12 @@
             
             var month_pay = (amt * (interest / 12) / (1 - (1/(1+(interest / 12)) ** term)));
 
-            $("#month_pay").text(month_pay);
+            $("#month_pay").text(month_pay.toFixed(2));
             
             let total = (month_pay * term - amt);
 
           
-            $("#total_value").text(total);
+            $("#total_value").text(total.toFixed(2));
             
           }
 
